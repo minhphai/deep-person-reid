@@ -24,8 +24,8 @@ class GROZI(BaseImageDataset):
     dataset_dir = 'grozi'
 
     def __init__(self, root='data', verbose=True, **kwargs):
-        super(GROZI, self).__init__()
-        self.dataset_dir = osp.join(root, self.dataset_dir)
+        super(GROZI, self).__init__(root)
+        self.dataset_dir = osp.join(self.root, self.dataset_dir)
         # self.train_dir = osp.join(self.dataset_dir, 'MSMT17_V1/train')
         # self.test_dir = osp.join(self.dataset_dir, 'MSMT17_V1/test')
         self.csv_train_path = osp.join(self.dataset_dir, 'train.csv')
